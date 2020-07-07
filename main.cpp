@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::cout << "\tbuild" << version() std::endl;
+    std::cout << "\tbuild" << version() << std::endl;
     std::cout << "\tHello, World!\n";
 
     return 0;
