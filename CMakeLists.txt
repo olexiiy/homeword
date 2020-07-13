@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(otus-cpp VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 
 
