@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(otus-cpp VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 
 
@@ -11,11 +11,11 @@ configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
 add_executable(helloworld main.cpp)
 
-add_library(helloworld lib.cpp)
+add_library(lib_h lib.cpp)
 
 add_executable(test_version test_version.cpp)
 
-set_target_properties(helloworld helloworld test_version PROPERTIES
+set_target_properties(helloworld lib_h test_version PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
@@ -27,13 +27,13 @@ set_target_properties(test_version PROPERTIES
 )
 
 target_link_libraries(helloworld
-    helloworld
+    lib_h
     Threads::Threads
 )
 
 target_link_libraries(test_version
     ${Boost_LIBRARIES}
-    helloworld
+    lib_h
 )
 
 install(TARGETS helloworld RUNTIME DESTINATION bin)
@@ -53,3 +53,4 @@ include(CPack)
 enable_testing()
 
 add_test(helloworld_tests test_version)
+
