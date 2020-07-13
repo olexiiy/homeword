@@ -17,4 +17,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - curl -f -T $PKG-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uolexiiy:$BINTRAY_API_KEY "https://api.bintray.com/content/olexiiy/homework/otus-cpp/$PKG/$PKG/$TRAVIS_BUILD_NUMBER/$PKG-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -f -T $PKG-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uolexiiy:$BINTRAY_API_KEY "https://api.bintray.com/content/olexiiy/homework/otus-cpp/$PKG/$PKG-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
